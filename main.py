@@ -289,8 +289,8 @@ async def dm(ctx, * , msg):
    await ctx.author.send(f"You said {msg} ")
 
 @bot.command()
-async def reply(ctx):
-   await ctx.reply("This is a reply you asked for")
+async def reply(ctx, * , msg):
+   await ctx.reply(f"{msg}")
    
 @bot.command()
 async def poll(ctx,*,msg):
@@ -310,4 +310,5 @@ async def puzzle(ctx):
 
 
 webserver.keep_alive()
+
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
